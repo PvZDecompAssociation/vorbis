@@ -119,13 +119,7 @@ if (NOT BUILD_FRAMEWORK)
     if(INSTALL_CMAKE_PACKAGE_MODULE)
 
     set(CMAKE_INSTALL_CONFIGDIR ${CMAKE_INSTALL_LIBDIR}/cmake/Vorbis)
-
-        install(EXPORT VorbisTargets
-            DESTINATION ${CMAKE_INSTALL_CONFIGDIR}
-            NAMESPACE Vorbis::
-        )
-
-
+    
         include(CMakePackageConfigHelpers)
 
         configure_package_config_file(${PROJECT_SOURCE_DIR}/cmake/VorbisConfig.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/VorbisConfig.cmake
