@@ -116,17 +116,6 @@ if (NOT BUILD_FRAMEWORK)
     target_link_libraries(vorbisenc PUBLIC vorbis)
     target_link_libraries(vorbisfile PUBLIC vorbis)
 
-    install(FILES ${VORBIS_PUBLIC_HEADERS} DESTINATION ${CMAKE_INSTALL_FULL_INCLUDEDIR}/vorbis)
-
-    install(TARGETS vorbis vorbisenc vorbisfile
-        EXPORT VorbisTargets
-        RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-        LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-        ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
-        FRAMEWORK DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    )
-    export(EXPORT VorbisTargets NAMESPACE Vorbis:: FILE VorbisTargets.cmake)
-
     if(INSTALL_CMAKE_PACKAGE_MODULE)
 
     set(CMAKE_INSTALL_CONFIGDIR ${CMAKE_INSTALL_LIBDIR}/cmake/Vorbis)
